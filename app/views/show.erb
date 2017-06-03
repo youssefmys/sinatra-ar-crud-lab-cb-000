@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  <% if !@post.nil? %>
+  <h2> Post Name: </h2>
+  <%= @post.name %>
+  <h2> Post Content: </h2>
+  <%= @post.content %>
+
+  <form action = '/posts/<%=@post.id%>/delete' method = "post">
+  <input name = '_method' id = 'hidden' type = 'hidden' value = 'delete'>
+  <input type = 'submit' style = "color: red;" value = "delete">
+  </form>
+
+  <% else %>
+  <%= "Can't found Post ID!" %> 
+  <% end %>
+
+  </body>
+</html>

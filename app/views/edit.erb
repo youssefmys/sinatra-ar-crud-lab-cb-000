@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  <% if !@post.nil? %>
+     <h2>Post Name: </h2>
+     <%= @post.name %>
+     <h2>Post Content: </h2>
+     <%= @post.content %>
+    <form action = "/posts/<%= @post.id %>" method = "post">
+      name: <input type = "text" name = "name" id = "name" ><br>
+      content: <textarea name = "content" id ="content"></textarea>
+      <input type= "hidden" id = "hidden" name = "_method" value = "patch">
+      <button type = "submit">submit</button>
+    </form>
+    <% else %>
+    <%= "Post was not found!" %>
+    <% end %> 
+  </body>
+</html>

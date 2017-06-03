@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  <% if Post.all != [] %>
+  <% Post.all.each do |post| %>
+  <h2> Post Name: </h2>
+  <%= post.name %>
+  <h2> Post Content </h2>	
+  <%= post.content %>
+  <% end %>
+  <% else %>
+  <%= "No Posts to show" %>
+  <% end %>
+  </body>
+</html>
